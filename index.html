@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Adinda</title>
+    <link rel="stylesheet" type="text/css" href="a.css">
+</head>
+<body >
+    <button type="button" id="btn" class="btn"> Tekan Jika Kamu Adinda </button>
+    <script src="dist/sweetalert2.all.min.js"></script>
+    <script>
+        const btn = document.getElementById('btn');
+        btn.addEventListener('click',function(){
+        Swal.fire({
+        title: 'Apakah Kamu Sayang Aku?',
+        showDenyButton: true,
+        showCancelButton: true,
+        confirmButtonText: 'Sayang',
+        denyButtonText: `Engga Sayang`,
+        }).then((result) => {
+        /* Read more about isConfirmed, isDenied below */
+        if (result.isConfirmed) {
+            Swal.fire('I Love You Sayanggg!', '', 'success')
+        } else if (result.isDenied) {
+            Swal.fire('Yaaah Aku Sedih nii :(', '', 'info')
+        }
+    })
+        })
+    </script>
+</body>
+</html>
